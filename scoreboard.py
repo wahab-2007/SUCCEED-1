@@ -72,6 +72,19 @@ class Scoreboard:
         failed_rect.center = self.screen_rect.center
 
         self.screen.blit(failed_image, failed_rect)
+        
+        # ADDED by Ali: tell the player how to restart
+        hint_image = self.font.render(
+            "Press R to restart",
+            True,
+            self.text_color
+        )
+
+        hint_rect = hint_image.get_rect()
+        hint_rect.midtop = failed_rect.midbottom
+        hint_rect.top += 10
+
+        self.screen.blit(hint_image, hint_rect)
 
     def draw_curr_wave(self, wave):
         curr_wave_image = self.font.render(
