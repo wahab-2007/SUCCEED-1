@@ -138,7 +138,9 @@ class AlienInvasion:
         alien = Alien(self)
         alien.x = alien_width + 2 * alien_width * alien_number
         alien.rect.x = int(alien.x)
-        alien.rect.y = alien_height + 2 * alien_height * row_number
+        
+        # MODIFIED by Ali: use fleet_top so aliens don't overlap the text
+        alien.rect.y = self.settings.fleet_top + 2 * alien_height * row_number
         self.aliens.add(alien)
 
     def _check_fleet_edges(self):

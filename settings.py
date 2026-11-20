@@ -28,3 +28,6 @@ class Settings:
         self.fleet_drop_speed = 12
         self.fleet_direction = 1
         self.alien_points = 50
+
+        # ADDED by Ali: start the fleet below the score text
+        self.fleet_top = 100
